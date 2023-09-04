@@ -20,7 +20,10 @@ public class Usuario {
     private Long id;
     private String nome;
     private String sobrenome;
-    private String cpf;
+
+    @Column(unique = true)
+    private String documento;
+    @Column(unique = true)
     private String email;
     private String senha;
     private BigDecimal saldo;
@@ -30,7 +33,7 @@ public class Usuario {
     public Usuario(DadosCadastroUsuario dados) {
         this.nome = nome;
         this.sobrenome = sobrenome;
-        this.cpf = cpf;
+        this.documento = documento;
         this.email = email;
         this.senha = senha;
         this.saldo = saldo;
