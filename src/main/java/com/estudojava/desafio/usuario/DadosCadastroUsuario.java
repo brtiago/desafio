@@ -10,12 +10,14 @@ import java.math.BigDecimal;
 
 public record DadosCadastroUsuario(
         @NotBlank
-        String nome,
+        String nomeCompleto,
         @NotBlank
-        String sobrenome,
-        @NotBlank
-        @Pattern(regexp = "\\d{3}\\.?\\d{3}\\.?\\d{3}\\-?\\d{2}")
-        String cpf,
+        //@Pattern(regexp = "\\d{3}\\.?\\d{3}\\.?\\d{3}\\-?\\d{2}")
+        String documento,
+        @NotNull
+        @Valid
+        TipoDeDocumento tipoDeDocumento,
+
         @NotBlank
         @Email
         String email,
