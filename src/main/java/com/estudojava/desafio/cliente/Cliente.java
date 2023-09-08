@@ -1,6 +1,5 @@
-package com.estudojava.desafio.usuario;
+package com.estudojava.desafio.cliente;
 
-import com.estudojava.desafio.conta.Conta;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -8,40 +7,32 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
-import java.math.BigDecimal;
-
-@Table(name = "usuarios")
-@Entity(name = "Usuario")
+@Table(name = "clientes")
+@Entity(name = "cliente")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Usuario {
+public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nomeCompleto;
     @Column(unique = true)
     private String documento;
-
-    @Enumerated
-    TipoDeDocumento tipoDeDocumento;
-
     @Column(unique = true)
     private String email;
     private String senha;
-    private BigDecimal saldo;
     @Enumerated
-    private TipoDeUsuario tipoDeUsuario;
+    private TipoDeCliente tipoDeCliente;
 
-
-    public Usuario(@NotNull DadosCadastroUsuario dados) {
+    public Cliente(DadosCadastroCliente dados) {
         this.nomeCompleto = dados.nomeCompleto();
         this.documento = dados.documento();
-        this.tipoDeDocumento = dados.tipoDeDocumento();
         this.email = dados.email();
         this.senha = dados.senha();
-        this.saldo = dados.saldo();
-        this.tipoDeUsuario = dados.tipoDeUsuario();
+        this.tipoDeCliente = dados.tipoDeCliente();
     }
+
+
 }

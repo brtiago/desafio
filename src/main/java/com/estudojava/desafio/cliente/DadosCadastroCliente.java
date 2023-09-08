@@ -1,22 +1,16 @@
-package com.estudojava.desafio.usuario;
+package com.estudojava.desafio.cliente;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 
-import java.math.BigDecimal;
-
-public record DadosCadastroUsuario(
+public record DadosCadastroCliente(
         @NotBlank
         String nomeCompleto,
         @NotBlank
         //@Pattern(regexp = "\\d{3}\\.?\\d{3}\\.?\\d{3}\\-?\\d{2}")
         String documento,
-        @NotNull
-        @Valid
-        TipoDeDocumento tipoDeDocumento,
 
         @NotBlank
         @Email
@@ -24,10 +18,8 @@ public record DadosCadastroUsuario(
 
         @NotBlank
         String senha,
-        @NotNull
-        BigDecimal saldo,
 
         @NotNull
         @Valid
-        TipoDeUsuario tipoDeUsuario) {
+        TipoDeCliente tipoDeCliente) {
 }
