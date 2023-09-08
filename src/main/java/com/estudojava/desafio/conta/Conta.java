@@ -1,5 +1,6 @@
 package com.estudojava.desafio.conta;
 
+import com.estudojava.desafio.cliente.Cliente;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,16 +12,31 @@ import java.math.BigDecimal;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "idConta")
+@EqualsAndHashCode(of = "id")
 
 public class Conta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idConta;
+    private Long id;
+    @ManyToOne
+    private Cliente idCliente;
+    private BigDecimal saldo;
 
-    private String titular;
-    private BigDecimal saldoDisponivel;
-    private BigDecimal saldoBloqueado;
+    public Conta(Cliente idCliente, BigDecimal saldoDisponivel) {
+        this.idCliente = idCliente;
+        this.saldo = saldoDisponivel;
+    }
 
+    public void debitar(BigDecimal valor) {
+        if (saldo.compareTo(valor) >= 0) {
+            saldo = saldo.subtract(valor);
+        }
+    }
+
+     public void creditar(BigDecimal valor) {
+        if (valor.compareTo(BigDecimal.ZERO) >= 0) {
+            saldo = saldo.add(valor);
+        }
+     }
 
 }
