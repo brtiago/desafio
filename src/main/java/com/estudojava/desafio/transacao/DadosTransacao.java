@@ -1,12 +1,13 @@
 package com.estudojava.desafio.transacao;
 
-import com.estudojava.desafio.usuario.Usuario;
+import com.estudojava.desafio.cliente.Cliente;
 
 import java.math.BigDecimal;
 
 public record DadosTransacao(
-        Usuario origem,
-        Usuario destino,
+        Cliente origem,
+        Cliente destino,
         BigDecimal valor,
-        StatusDaTransacao status) {
+        StatusDaTransacao status,
+        TipoDeTransacao tipoDeTransacao) {
 }
