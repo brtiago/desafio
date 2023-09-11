@@ -1,4 +1,4 @@
-package com.estudojava.desafio.transacao;
+package com.estudojava.desafio.domain.transacao;
 
 public enum TipoDeTransacao {
     SACAR,

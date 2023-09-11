@@ -1,4 +1,4 @@
-package com.estudojava.desafio.cliente;
+package com.estudojava.desafio.domain.cliente;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
@@ -7,7 +7,7 @@ import jakarta.validation.constraints.NotNull;
 
 public record DadosCadastroCliente(
         @NotBlank
-        String nomeCompleto,
+        String nome,
         @NotBlank
         //@Pattern(regexp = "\\d{3}\\.?\\d{3}\\.?\\d{3}\\-?\\d{2}")
         String documento,

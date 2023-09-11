@@ -1,4 +1,4 @@
-package com.estudojava.desafio.cliente;
+package com.estudojava.desafio.domain.cliente;
 
 public enum TipoDeCliente {
     COMUM,

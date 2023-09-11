@@ -1,6 +1,6 @@
-package com.estudojava.desafio.conta;
+package com.estudojava.desafio.domain.conta;
 
-import com.estudojava.desafio.cliente.Cliente;
+import com.estudojava.desafio.domain.cliente.Cliente;
 import jakarta.persistence.*;
 import lombok.*;
 

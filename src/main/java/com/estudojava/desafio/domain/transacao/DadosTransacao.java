@@ -1,6 +1,6 @@
-package com.estudojava.desafio.transacao;
+package com.estudojava.desafio.domain.transacao;
 
-import com.estudojava.desafio.cliente.Cliente;
+import com.estudojava.desafio.domain.cliente.Cliente;
 
 import java.math.BigDecimal;
 
