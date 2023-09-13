@@ -1,6 +1,8 @@
-package com.estudojava.desafio.domain.transacao;
+package com.estudojava.desafio.dtos;
 
 import com.estudojava.desafio.domain.cliente.Cliente;
+import com.estudojava.desafio.domain.transacao.StatusDaTransacao;
+import com.estudojava.desafio.domain.transacao.TipoDeTransacao;
 
 import java.math.BigDecimal;
 
