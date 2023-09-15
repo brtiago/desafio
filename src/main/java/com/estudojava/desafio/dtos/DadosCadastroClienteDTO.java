@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public record DadosCadastroCliente(
+public record DadosCadastroClienteDTO(
         @NotBlank(message = "Nome é obrigatório")
         String nome,
         @NotBlank(message = "Documento é obrigatório")
